@@ -1,0 +1,183 @@
+.main {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.viewToggle {
+  padding: 0.5rem 1rem;
+  background-color: #0070f3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.viewToggle:hover {
+  background-color: #0051b3;
+}
+
+.gallery {
+  margin-bottom: 2rem;
+}
+
+.gridView {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.listView {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.item {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.item:hover {
+  transform: translateY(-2px);
+}
+
+.gridView .item {
+  display: flex;
+  flex-direction: column;
+}
+
+.listView .item {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+}
+
+.image {
+  object-fit: cover;
+}
+
+.gridView .image {
+  width: 100%;
+  height: 150px;
+}
+
+.listView .image {
+  width: 100px;
+  height: 100px;
+  margin-right: 1rem;
+}
+
+.details {
+  padding: 1rem;
+}
+
+.gridView .details {
+  flex: 1;
+}
+
+.listView .details {
+  flex: 1;
+}
+
+.details h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+.details p {
+  margin: 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.pageButton {
+  padding: 0.5rem 1rem;
+  background-color: #0070f3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.pageButton:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.pageButton:hover:not(:disabled) {
+  background-color: #0051b3;
+}
+
+.pageInfo {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main {
+    padding: 1rem;
+  }
+
+  .controls {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .controls h1 {
+    margin: 0;
+  }
+
+  .gridView {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+
+  .listView .item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .listView .image {
+    width: 100%;
+    height: 200px;
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .gridView {
+    grid-template-columns: 1fr;
+  }
+}
